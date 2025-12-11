@@ -1,0 +1,40 @@
+# ============================================================
+# Configuration for Conversational LLM Training
+# For RTX 3050 Laptop (3.7GB VRAM)
+# ============================================================
+
+# Model - use "small" for better quality (fits with batch=1)
+# "xsmall" was too small to learn language properly
+model_size: "small"
+max_seq_length: 256
+
+# Data paths
+data_path: "./data/processed/tokenized_data.pt"
+tokenizer_path: "./data/tokenizer/tokenizer.json"
+
+# Training - ULTRA CONSERVATIVE for 3.7GB VRAM
+# batch=1 with accum=64 gives effective batch of 64
+batch_size: 1
+gradient_accumulation_steps: 64
+
+learning_rate: 5.0e-4
+weight_decay: 0.1
+epochs: 20
+warmup_steps: 300
+
+# Memory optimizations
+use_amp: true
+use_gradient_checkpointing: true
+compile_model: false
+
+# Checkpointing
+checkpoint_dir: "./checkpoints"
+resume_from: null
+save_every: 2
+
+# Logging
+log_interval: 200
+sample_every: 2
+
+# DataLoader
+num_workers: 0

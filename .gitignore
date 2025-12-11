@@ -1,0 +1,8 @@
+
+venv/
+data/
+logs/
+checkpoints/
+notesbooks/
+prompt.md
+

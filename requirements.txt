@@ -1,0 +1,26 @@
+# Core ML dependencies
+torch>=2.0.0
+transformers>=4.35.0
+datasets>=2.14.0
+tokenizers>=0.15.0
+accelerate>=0.24.0
+
+# Data processing
+tqdm
+numpy
+pandas
+pyarrow
+sentencepiece
+
+# Configuration
+pyyaml
+
+# Inference & UI
+gradio
+
+# Optional: Logging (uncomment if needed)
+# wandb
+
+# Jupyter support
+jupyter
+ipywidgets
